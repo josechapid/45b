@@ -31,6 +31,17 @@ function nFibonacci(n) {
  let result= nFibonacci(n-1)+ nFibonacci(n-2)
 return result;
 }
+// 0  1  2  3  4  5  6  7  8 posiciones 
+// 0  1  1  2  3  5  8  13   valores
+//                   a  b  
+console.log(nFibonacci(0))
+console.log(nFibonacci(1))
+console.log(nFibonacci(2))
+console.log(nFibonacci(3))
+console.log(nFibonacci(4))
+console.log(nFibonacci(5))
+console.log(nFibonacci(6))
+console.log(nFibonacci(7))
 
 /*
 Implementar la clase Queue, sabiendo que es una estructura de tipo FIFO, donde el primer elemento que ingresa es el primero que se quita. Definir los siguientes métodos:
@@ -40,8 +51,31 @@ Implementar la clase Queue, sabiendo que es una estructura de tipo FIFO, donde e
 
 Pueden utilizar class o función constructora.
 */
+//lifo
+function Queue() {
+  this.fila=[]
+}
+Queue.prototype.enqueue=function(arg){
+  this.fila.push(arg)
+  return this.fila
+}
 
-function Queue() {}
+Queue.prototype.dequeue=function(){
+  return this.fila.shift()
+}
+
+Queue.prototype.size=function(){
+  return this.fila.length
+}
+
+
+const agregar=new Queue ();
+console.log(agregar.enqueue(3))
+console.log()
+
+
+
+
 
 /*⚠️ No modificar nada debajo de esta línea ⚠️*/
 module.exports = {

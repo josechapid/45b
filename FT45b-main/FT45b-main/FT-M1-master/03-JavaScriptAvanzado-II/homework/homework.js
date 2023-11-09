@@ -21,8 +21,8 @@ function counter() {
     return contador;
   } 
 }
-const nuevoq=counter(),
-console.log (nuevoq);
+const nuevoq=counter();
+console.log (nuevoq());
 
 /* Ejercicio 2
 Tu tarea aquí es lograr, mediante un closure, que cacheFunction actúe como una memoria caché para el callback 
@@ -46,8 +46,8 @@ cacheFunction debe retornar una función. Esta función debe aceptar un argument
   return arg *2
 } */
 
-/* function cacheFunction(cb) {
-   let memoria={};
+function cacheFunction(cb) {}
+/*   let memoria={};
    return function (arg){
     if(memoria.hasOwnProperty(arg)) { // {key:value}
        return memoria[arg]
@@ -80,7 +80,8 @@ var alumno = {
 };
 
 function getNombre() {
-  return this.nombre;}
+  return this.nombre;
+}; 
 
 /*
   Ejercicio 3
@@ -89,7 +90,7 @@ function getNombre() {
 */
 
 let getNombreInstructor = getNombre.bind(instructor);
-console.log(getNombreInstructor)
+
 let getNombreAlumno = getNombre.bind(alumno);
 
 /*
